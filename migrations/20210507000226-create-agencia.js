@@ -2,33 +2,28 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Clientes', { 
+    await queryInterface.createTable('Agencia', { 
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER 
       },
-      nome: {
-        allowNull: false,
-        type: Sequelize.STRING
-      },
-      cpf: {
-        allowNull: false,
-        type: Sequelize.STRING
-      },
-      sexo: {
-        allowNull: false,
-        type: Sequelize.STRING
-      },
-      salario: {
-        allowNull: false,
-        type: Sequelize.STRING
-      },
-      contato: {
+      numero: {
         allowNull: false,
         type: Sequelize.INTEGER
       },
+      descricao: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
+     /* id_banco: {
+        agencia.hasMany(id_banco, {foreignKey: ""})
+        foreignKey: true,
+        allowNull: false,
+      
+        type: Sequelize.INTEGER
+      }, */
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
@@ -37,15 +32,15 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       },
-      /* cidadeId: {
+     /* cidadeId: {
         type: Sequelize.INTEGER,
         references: {
           model: 'Cidades',
           key: 'id',
           as: 'cidadeId'
         }
-      }    
-      */  
+      }
+      */      
     })
 
     /**
@@ -57,7 +52,7 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Clientes');
+    await queryInterface.dropTable('Agencia');
     /**
      * Add reverting commands here.
      *

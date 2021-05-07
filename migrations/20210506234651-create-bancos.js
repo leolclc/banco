@@ -29,14 +29,15 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       },
-      cidadeId: {
+     /* cidadeId: {
         type: Sequelize.INTEGER,
         references: {
           model: 'Cidades',
           key: 'id',
           as: 'cidadeId'
         }
-      }      
+      }
+      */      
     })
 
     /**
